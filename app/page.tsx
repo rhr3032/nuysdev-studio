@@ -78,6 +78,11 @@ function Tag({ children }: { children: React.ReactNode }) {
 // ─── Main page ────────────────────────────────────────────────────────────────
 export default function AgenticPage() {
   const [email, setEmail] = useState("")
+  const [name, setName] = useState("")
+  const [phone, setPhone] = useState("")
+  const [company, setCompany] = useState("")
+  const [subject, setSubject] = useState("")
+  const [message, setMessage] = useState("")
   const [submitted, setSubmitted] = useState(false)
   const [heroReady, setHeroReady] = useState(false)
   const [videoReady, setVideoReady] = useState(false)
@@ -479,7 +484,7 @@ export default function AgenticPage() {
         <div className="flex border-b border-black/[0.06]" style={{ animation: "marqueeLeft 28s linear infinite" }}>
           {[...Array(3)].map((_, rep) => (
             <div key={rep} className="flex shrink-0">
-              {["React & Vue", "Node.js & Python", "Mobile Apps", "Cloud Architecture", "API Design", "Database Design", "CI/CD Pipeline", "DevOps", "Performance Optimization", "Security Audit"].map((cap) => (
+              {["React & Vue", "TypeScript & JavaScript", "Python & Node.js", "Java & Spring Boot", "Mobile Apps", "Go & Rust", "C# & .NET", "Cloud Architecture", "API Design", "Database Design", "CI/CD Pipeline", "DevOps"].map((cap) => (
                 <div key={cap} className="flex items-center gap-6 px-10 py-5 border-r border-black/[0.06] shrink-0">
                   <span className="w-1.5 h-1.5 rounded-full bg-black/20 shrink-0" />
                   <span className="text-sm text-black/45 whitespace-nowrap tracking-wide">{cap}</span>
@@ -491,7 +496,7 @@ export default function AgenticPage() {
         <div className="flex" style={{ animation: "marqueeRight 22s linear infinite" }}>
           {[...Array(3)].map((_, rep) => (
             <div key={rep} className="flex shrink-0">
-              {["UI/UX Design", "User Testing", "Technical Architecture", "Scalability Planning", "Maintenance Support", "Feature Enhancement", "Bug Fixing", "Code Refactoring", "Performance Tuning", "System Integration"].map((cap) => (
+              {["Kotlin & Swift", "PHP & Laravel", "SQL & NoSQL", "AWS & Azure", "Docker & Kubernetes", "Firebase & Supabase", "PostgreSQL & MongoDB", "Microservices", "WebSockets & GraphQL", "Testing & Quality"].map((cap) => (
                 <div key={cap} className="flex items-center gap-6 px-10 py-5 border-r border-black/[0.06] shrink-0">
                   <span className="w-1.5 h-1.5 rounded-full bg-black/12 shrink-0" />
                   <span className="text-sm text-black/30 whitespace-nowrap tracking-wide">{cap}</span>
@@ -626,37 +631,93 @@ export default function AgenticPage() {
             background: "linear-gradient(to top, rgb(245,244,240) 0%, rgba(245,244,240,0.92) 18%, rgba(245,244,240,0.55) 35%, transparent 55%)",
           }}
         />
-        <div className="relative z-10 max-w-2xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.05] mb-6">
-            Ready to start your<br />next project?
-          </h2>
-          <p className="text-sm text-black/45 leading-relaxed mb-10">
-            Join hundreds of satisfied clients who've transformed their ideas into successful digital products with our expert team.
-          </p>
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="mb-4"><Tag>CONTACT</Tag></div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.05] mb-6">
+              Get In Touch
+            </h2>
+            <p className="text-sm text-black/45 leading-relaxed max-w-xl mx-auto">
+              Have a project in mind? Let's discuss how we can help bring your vision to life. Fill out the form below and our team will get back to you within 24 hours.
+            </p>
+          </div>
           {!submitted ? (
             <form
-              onSubmit={e => { e.preventDefault(); if (email) setSubmitted(true) }}
-              className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto"
+              onSubmit={e => { e.preventDefault(); if (email && name) setSubmitted(true) }}
+              className="w-full max-w-2xl mx-auto"
             >
-              <input
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                required
-                className="flex-1 bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#111] placeholder:text-black/25 focus:outline-none focus:border-black/25 transition-colors"
-              />
+              {/* Name and Email Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                  required
+                  className="bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#111] placeholder:text-black/25 focus:outline-none focus:border-black/25 transition-colors"
+                />
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  required
+                  className="bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#111] placeholder:text-black/25 focus:outline-none focus:border-black/25 transition-colors"
+                />
+              </div>
+
+              {/* Phone and Company Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  value={phone}
+                  onChange={e => setPhone(e.target.value)}
+                  className="bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#111] placeholder:text-black/25 focus:outline-none focus:border-black/25 transition-colors"
+                />
+                <input
+                  type="text"
+                  placeholder="Company (Optional)"
+                  value={company}
+                  onChange={e => setCompany(e.target.value)}
+                  className="bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#111] placeholder:text-black/25 focus:outline-none focus:border-black/25 transition-colors"
+                />
+              </div>
+
+              {/* Subject */}
+              <div className="mb-4">
+                <input
+                  type="text"
+                  placeholder="Project Subject"
+                  value={subject}
+                  onChange={e => setSubject(e.target.value)}
+                  required
+                  className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#111] placeholder:text-black/25 focus:outline-none focus:border-black/25 transition-colors"
+                />
+              </div>
+
+              {/* Message */}
+              <div className="mb-6">
+                <textarea
+                  placeholder="Tell us about your project..."
+                  value={message}
+                  onChange={e => setMessage(e.target.value)}
+                  rows={4}
+                  className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-sm text-[#111] placeholder:text-black/25 focus:outline-none focus:border-black/25 transition-colors resize-none"
+                />
+              </div>
+
               <button
                 type="submit"
-                className="px-8 py-3 bg-[#111] text-white text-sm rounded-xl hover:bg-[#333] transition-colors tracking-widest font-medium"
+                className="w-full md:w-auto px-12 py-3 bg-[#111] text-white text-sm rounded-xl hover:bg-[#333] transition-colors tracking-widest font-medium"
               >
-                JOIN
+                GET IN TOUCH
               </button>
             </form>
           ) : (
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-emerald-600/20 bg-emerald-50 text-emerald-700 text-sm">
               <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              {"You're on the list. We'll be in touch."}
+              {"Thank you! We've received your message and will contact you soon."}
             </div>
           )}
         </div>
