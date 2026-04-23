@@ -732,11 +732,11 @@ export default function AgenticPage() {
           {/* Nav sections */}
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
             {[
-              { label: "Platform",     href: "#platform" },
-              { label: "Agents",       href: "#agents" },
+              { label: "Overview",     href: "#overview" },
+              { label: "Services",       href: "#services" },
               { label: "Workflow",     href: "#workflow" },
-              { label: "Integrations", href: "#integrations" },
-              { label: "Live",         href: "#live" },
+              { label: "Projects", href: "#projects" },
+              { label: "Consulting",         href: "#consulting" },
               { label: "Pricing",      href: "#pricing" },
             ].map(l => (
               <a key={l.label} href={l.href} className="text-xs text-black/35 hover:text-black/70 transition-colors tracking-widest">{l.label}</a>
@@ -748,15 +748,15 @@ export default function AgenticPage() {
             {[
               { label: "Privacy", href: "#" },
               { label: "Terms",   href: "#" },
-              { label: "Docs",    href: "#" },
-              { label: "GitHub",  href: "#" },
+              { label: "Facebook",    href: "#" },
+              { label: "LinkedIn",  href: "#" },
             ].map(l => (
               <a key={l.label} href={l.href} className="text-xs text-black/25 hover:text-black/55 transition-colors tracking-widest">{l.label}</a>
             ))}
           </div>
         </div>
         <div className="max-w-6xl mx-auto mt-8 pt-6 border-t border-black/[0.04]">
-          <span className="text-xs text-black/20">© 2026 NUYsDev. All Rights Reserved.</span>
+          <span className="text-xs text-black/20">© {new Date().getFullYear()} NUYsDev. All Rights Reserved.</span>
         </div>
       </footer>
     </div>

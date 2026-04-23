@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 
 // Splits text into words and reveals each with staggered opacity+blur+translateY
-// matching the AGENTIC intro animation style.
+// matching the NUYsDEV intro animation style.
 export function RevealText({
   children,
   className = "",
