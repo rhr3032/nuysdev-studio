@@ -113,7 +113,7 @@ export default function AgenticPage() {
       <MobileNav />
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section className="relative h-screen overflow-hidden">
+      <section id="home" className="relative h-screen overflow-hidden">
 
         {/* Video background — zooms in once intro is done */}
         <video
@@ -182,10 +182,10 @@ export default function AgenticPage() {
       </section>
 
       {/* ── PLATFORM OVERVIEW (bento) ──────────────────────────────────────── */}
-      <section id="platform" className="py-32 px-6 md:px-12 lg:px-20">
+      <section id="overview" className="py-32 px-6 md:px-12 lg:px-20">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <PixelIcon type="platform" size={40} />
+            <PixelIcon type="overview" size={40} />
             <div className="mt-4"><Tag>OVERVIEW</Tag></div>
             <RevealText className="mt-5 text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.05]">
               {"We don't just build screens,\nWe craft user experiences."}
@@ -258,12 +258,12 @@ export default function AgenticPage() {
       </section>
 
       {/* ── BUILD YOUR AGENTS (4 cards) ───────────────────────────────────── */}
-      <section id="agents" className="py-32 px-6 md:px-12 lg:px-20 border-t border-black/[0.06]">
+      <section id="services" className="py-32 px-6 md:px-12 lg:px-20 border-t border-black/[0.06]">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
             <div>
-              <PixelIcon type="agents" size={40} />
-              <div className="mt-4"><Tag>Services</Tag></div>
+              <PixelIcon type="services" size={40} />
+              <div className="mt-4"><Tag>SERVICES</Tag></div>
               <RevealText className="mt-5 text-4xl md:text-5xl font-light tracking-tight leading-[1.05]">
                 {"Proven Expertise.\nUnlimited Possibilities."}
               </RevealText>
@@ -323,12 +323,12 @@ export default function AgenticPage() {
         </div>
       </section>
 
-      {/* ── INTEGRATIONS ──────────────────────────────────────────────────── */}
-      <section id="integrations" className="py-32 px-6 md:px-12 lg:px-20 border-t border-black/[0.06]">
+      {/* ── CONSULTING ──────────────────────────────────────────────────── */}
+      <section id="consulting" className="py-32 px-6 md:px-12 lg:px-20 border-t border-black/[0.06]">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
             <div>
-              <PixelIcon type="integrations" size={40} />
+              <PixelIcon type="consulting" size={40} />
               <div className="mt-4"><Tag>GET IN TOUCH</Tag></div>
               <RevealText className="mt-5 text-4xl md:text-5xl font-light tracking-tight leading-[1.05]">
                 {"Ready to bring your idea\nto life?"}
@@ -605,7 +605,7 @@ export default function AgenticPage() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-32 px-6 md:px-12 lg:px-20 border-t border-black/[0.06] overflow-hidden">
+      <section id="contact" className="relative py-32 px-6 md:px-12 lg:px-20 border-t border-black/[0.06] overflow-hidden">
         {/* Glass panels image — anchored to bottom center */}
         <img
           src="/images/footer.png"
@@ -688,7 +688,7 @@ export default function AgenticPage() {
               <div className="mb-4">
                 <input
                   type="text"
-                  placeholder="Project Subject"
+                  placeholder="Subject"
                   value={subject}
                   onChange={e => setSubject(e.target.value)}
                   required
@@ -699,7 +699,7 @@ export default function AgenticPage() {
               {/* Message */}
               <div className="mb-6">
                 <textarea
-                  placeholder="Tell us about your project..."
+                  placeholder="Write here..."
                   value={message}
                   onChange={e => setMessage(e.target.value)}
                   rows={4}
@@ -727,7 +727,7 @@ export default function AgenticPage() {
       {/* ── FOOTER ────────────────────────────────────────────────────────── */}
       <footer className="py-10 px-6 md:px-12 lg:px-20 border-t border-black/[0.06]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <span className="font-pixel text-xs tracking-[0.25em] text-black/50">AGENTIC</span>
+          <span className="font-pixel text-xs tracking-[0.25em] text-black/50">NUYsDev</span>
 
           {/* Nav sections */}
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
@@ -756,7 +756,7 @@ export default function AgenticPage() {
           </div>
         </div>
         <div className="max-w-6xl mx-auto mt-8 pt-6 border-t border-black/[0.04]">
-          <span className="text-xs text-black/20">© 2026 Agentic. All rights reserved.</span>
+          <span className="text-xs text-black/20">© 2026 NUYsDev. All Rights Reserved.</span>
         </div>
       </footer>
     </div>
